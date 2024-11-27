@@ -1,5 +1,5 @@
-
-body{
+/* --- Estilos Base --- */
+body {
     font-family: "Poppins", sans-serif;
     color: rgb(206, 111, 166);
     background-image: url('fondo.jpg'); 
@@ -9,31 +9,33 @@ body{
     padding: 0;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+    backdrop-filter: blur(5px); /* Efecto de difuminado */
 }
 
-header a{
+header a {
     text-decoration: none;
     color: #db50a6;
     font-size: 20px;
     font-weight: bold;
+    margin: 0 10px;
 }
 
-#first{
+#first {
     font-weight: 500;
-    font-style: normal;
     text-align: center;
-    font-size: 400%;
-    margin: 200px auto 20px;
+    font-size: 3rem; /* Tamaño adaptable */
+    margin: 100px auto 20px;
     max-width: 800px;
     color: rgb(206, 111, 166);
 }
 
-button{
+button {
     display: block;
     margin: 20px auto;
     padding: 10px 20px; 
@@ -43,18 +45,16 @@ button{
     border: 5px solid rgb(206, 111, 166); 
     border-radius: 15px;
     cursor: pointer;
-    outline: none;
 }
 
-a{
+a {
     text-decoration: none;
-    
 }
 a:hover {
     opacity: 0.7;
 }
 
-.gif{
+.gif {
     display: block;
     margin: 20px auto; 
     max-width: 200px; 
@@ -67,7 +67,6 @@ a:hover {
     font-size: medium;
     margin: 0px auto 20px;
     max-width: 800px;
-   
 }
 
 .contact-container {
@@ -75,6 +74,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     gap: 20px; 
+    flex-wrap: wrap; /* Permitir ajuste en varias filas */
 }
 
 .contact-column {
@@ -107,19 +107,103 @@ a:hover {
     margin: 0 auto;
     text-align: center;
 }
+
 table {
     width: 100%;
     border-spacing: 20px 10px; 
     margin: 0 auto; 
 }
+
 th, td {
     padding: 10px 20px; 
 }
+
 th {
     font-size: 1.2em;
     color: #d63384;
 }
+
 td {
     font-size: 1em;
     color: #6c757d;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Media Queries para diseño responsive --- */
+
+/* Para dispositivos móviles (hasta 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Menú en columna */
+        text-align: center;
+    }
+
+    header a {
+        margin: 5px 0; /* Espaciado entre enlaces */
+        font-size: 18px;
+    }
+
+    #first {
+        font-size: 2rem; /* Reducir tamaño de fuente */
+        margin: 50px auto 20px;
+    }
+
+    button {
+        font-size: 16px; /* Ajustar tamaño del botón */
+        padding: 8px 15px;
+    }
+
+    .gif {
+        max-width: 150px; /* Reducir tamaño de imágenes */
+    }
+
+    #textouno {
+        font-size: 14px; /* Reducir tamaño del texto */
+    }
+
+    .contact-container {
+        flex-direction: column; /* Contactos en columna */
+        gap: 10px;
+    }
+
+    .contact-column img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .table-container {
+        max-width: 100%; /* Permitir que la tabla ocupe el ancho */
+        overflow-x: auto; /* Habilitar scroll horizontal si es necesario */
+    }
+
+    th, td {
+        font-size: 0.9em; /* Reducir tamaño del texto */
+        padding: 5px 10px;
+        word-wrap: break-word; /* Ajustar palabras largas */
+    }
+}
+
+/* Para tablets (hasta 1024px) */
+@media (max-width: 1024px) {
+    #first {
+        font-size: 2.5rem; /* Ajustar tamaño de fuente */
+        margin: 70px auto 20px;
+    }
+
+    .gif {
+        max-width: 180px; /* Ajustar tamaño de imágenes */
+    }
+
+    .contact-column img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .table-container {
+        max-width: 90%; /* Ajustar ancho de la tabla */
+    }
 }
